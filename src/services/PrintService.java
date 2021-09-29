@@ -3,18 +3,22 @@ package services;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PrintService {
+//Aqui você pode colocar a letra que você quiser, estou colocando "T" com significado de "Type"
+public class PrintService<T>{
 
-	/* Object aceita valores de todos os tipos, podendo ser perigoso, se seu
-	 * programa apenas pode aceitar valores tipo int
+	/* O generics aceita apenas o tipo que for parametrizado pelo programador, se você definir que 
+	 * a lista só irá aceitar o tipo int, ela não irá aceitar outros tipos, mas para que?:
+	 * Para ter o reuso da lógica, causo você queira trocar o tipo sem ter que alterar a lógica
+	 * do PrintService e quer que o programa não aceite outros tipos além do que foi parametrizado,
+	 * tendo um type safety (segurança de tipo).
 	 */
-	List<Object> ps = new ArrayList<>();
+	List<T> ps = new ArrayList<>();
 
-	public void addValue(Object value) {
+	public void addValue(T value) {
 		ps.add(value);
 	}
 
-	public Object first() {
+	public T first() {
 		// Se a lista está vazia ele irá lançar uma exceção
 		if (ps.isEmpty()) {
 			throw new IllegalStateException("List is empty");
