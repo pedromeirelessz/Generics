@@ -5,13 +5,16 @@ import java.util.List;
 
 public class PrintService {
 
-	List<Integer> ps = new ArrayList<>();
+	/* Object aceita valores de todos os tipos, podendo ser perigoso, se seu
+	 * programa apenas pode aceitar valores tipo int
+	 */
+	List<Object> ps = new ArrayList<>();
 
-	public void addValue(Integer value) {
+	public void addValue(Object value) {
 		ps.add(value);
 	}
 
-	public Integer first() {
+	public Object first() {
 		// Se a lista está vazia ele irá lançar uma exceção
 		if (ps.isEmpty()) {
 			throw new IllegalStateException("List is empty");

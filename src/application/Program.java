@@ -12,6 +12,8 @@ public class Program {
 
 		PrintService ps = new PrintService();
 
+		ps.addValue("Maria");
+
 		System.out.print("How many values?: ");
 		int n = sc.nextInt();
 
